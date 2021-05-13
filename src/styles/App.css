@@ -1,0 +1,26 @@
+#tile {
+  background-color: whitesmoke;
+  width: 300px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.342);
+}
+
+#delete {
+  position: relative;
+  left: 220px;
+}
+
+#blank {
+  height: 0;
+  width: 0;
+  font: 0px;
+  color: transparent;
+  background-color: transparent;
+  border-style: none;
+  position: relative;
+  left: -700%;
+  top: -700%;
+}
