@@ -43,7 +43,7 @@ export default function Tile(props) {
       </p>
       {props.message}
       <br />
-      {props.currentUser === props.user ? (
+      {firebase.auth().currentUser.email === props.user ? (
         <button
           id={props.buttonType}
           onMouseUp={props.deleteTile}

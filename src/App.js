@@ -11,7 +11,7 @@ class App extends React.Component {
       pointer: 0,
       text: "",
       array: [],
-      user: props.user.email,
+      user: firebase.auth().currentUser,
     };
     this.exportData = this.exportData.bind(this);
     this.deleteTile = this.deleteTile.bind(this);
@@ -30,7 +30,7 @@ class App extends React.Component {
       message: this.state.text,
       type: "tile",
       buttonType: "delete",
-      user: this.state.user,
+      user: firebase.auth().currentUser.email,
       viewComment: false,
       comments: [{ message: "", user: "" }],
     });
@@ -55,7 +55,8 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        {this.state.user ? <p>Hello, {this.state.user}!</p> : <div />}
+        <button onClick={() => alert(firebase.auth().currentUser.email)}>Log</button>
+        {this.state.user ? <p>Hello, {firebase.auth().currentUser.email}!</p> : <div />}
         <input
           type="text"
           value={this.state.text}
