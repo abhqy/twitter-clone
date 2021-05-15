@@ -1,3 +1,8 @@
+## 📱 twitter-clone (frontend branch)
+- Front end of twitter-clone application that allows users to communicate with each other through messages that can be seen by all users.
+- User authentication information and posts are saved in a cloud-based database using Firebase.
+- Front end website built using HTML5, CSS3, React.js, and Material UI.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -62,7 +67,3 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/ad
 ### Deployment
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
