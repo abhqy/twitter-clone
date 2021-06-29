@@ -5,7 +5,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Deployed web app: https://xp-lab.web.app/
+Deployed web app: 
+- Backend mechanism: https://xp-lab.web.app/
+- Frontend mechanism: https://scriptum-b1012.web.app/
 
 ## Available Scripts
 
