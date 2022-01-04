@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Comment from "./Comment";
 import firebase from "firebase";
 
@@ -6,6 +6,7 @@ export default function Tile(props) {
   const [comment, setComment] = useState("");
   const array = Object.values(props.comments);
   const [pointer, setPointer] = useState(0);
+  const [postUrl, setPostUrl] = useState(null);
 
   function addComment() {
     var ref = firebase.database().ref("posts/" + props.id + "/comments");
@@ -14,6 +15,7 @@ export default function Tile(props) {
       user: firebase.auth().currentUser.email,
       message: comment,
       id: randomID,
+      postUrl: null
     });
     setComment("");
   }
@@ -36,12 +38,36 @@ export default function Tile(props) {
     refToRemove.remove();
   }
 
+  useEffect(() => {
+    if (props.hasImg) {
+      console.log("There's an image for post w/ post desc ", props.message);
+      async function getImage() {
+        var storageRef = firebase.storage().ref();
+        console.log(storageRef);
+        storageRef.child(`posts/${props.id}`).getDownloadURL()
+          .then((url) => {
+            // `url` is the download URL for 'images/stars.jpg'
+            // Or inserted into an <img> element
+            setPostUrl(url);
+            console.log(url);
+          })
+          .catch((error) => {
+            setPostUrl(null);
+            setTimeout(() => getImage(), 1000);
+          });
+      }
+      getImage();
+    }
+  }, [props.hasImg, props.message, props.id])
+
   return (
     <div id={props.type}>
       <p>
         <b>{props.user}</b>
       </p>
       {props.message}
+      <br />
+      {(props.hasImg) && ((postUrl) ? <img alt="img" width="300" src={postUrl} /> : <div>Loading...</div>)}
       <br />
       {firebase.auth().currentUser.email === props.user ? (
         <button
