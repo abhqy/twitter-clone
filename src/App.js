@@ -6,7 +6,7 @@ import Tile from "./components/Tile";
 import AppBar from "@material-ui/core/AppBar"
 import { Dialog, DialogActions, DialogContent, DialogTitle, Grid, IconButton, TextField, Typography, Toolbar, Button, Box, Avatar } from "@material-ui/core";
 import { createStyles, MuiThemeProvider, createTheme } from "@material-ui/core/styles";
-import { Send, Image, Close } from "@material-ui/icons";
+import { Send, Image, Close, ExitToApp } from "@material-ui/icons";
 
 const theme = createStyles({
   palette: {
@@ -159,10 +159,21 @@ class App extends React.Component {
           }}>
             <Toolbar>
               <Box display='flex' flexGrow={1}>
+
                 <Typography variant="h5" style={{
                   "padding": "20px"
                 }}>AppName</Typography>
               </Box>
+
+              <div style={{ "paddingRight": "20px" }}>
+                <Button style={{ textTransform: 'none' }}
+                  startIcon={<ExitToApp />}
+                  onClick={() => firebase.auth().signOut()}
+                >
+                  Log Out
+                </Button>
+              </div>
+
 
               {firebase.auth().currentUser && <Avatar style={{
                 "backgroundColor": `${this.stringToColour()}`
