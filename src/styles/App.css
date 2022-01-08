@@ -1,16 +1,18 @@
 #tile {
-  background-color: whitesmoke;
-  width: 300px;
+  background-color: #40444b;
+  color: whitesmoke;
+  width: 400px;
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
   padding: 20px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.342);
+  border-radius: 30px;
 }
 
 #delete {
   position: relative;
-  left: 220px;
+  left: 270px;
 }
 
 #blank {
@@ -23,4 +25,8 @@
   position: relative;
   left: -700%;
   top: -700%;
+}
+
+#commentTextField fieldset {
+  border-radius: 30;
 }

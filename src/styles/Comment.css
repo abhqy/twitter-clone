@@ -1,9 +1,23 @@
 #comment {
   margin-top: 5px;
-  padding: 3px;
-  border-style: solid;
+  padding: 10px;
   border-top: 0px;
+  border-radius: 10;
   border-left: 0px;
   border-right: 0px;
-  border-color: rgb(206, 206, 206);
+  background-color: rgb(44, 47, 53);
+  color: whitesmoke;
+  width: 300px;
+}
+
+#delete-comment {
+  left: 200px;
+}
+
+.commentTextField fieldset {
+  border-radius: 10px;
+}
+
+#commentTextFieldBox {
+  width: 230px;
 }
