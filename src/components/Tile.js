@@ -8,7 +8,7 @@ import Grid from "@material-ui/core/Grid"
 import IconButton from "@material-ui/core/IconButton"
 import { Delete, InsertComment, Send } from "@material-ui/icons/"
 import { red } from "@material-ui/core/colors";
-import { Box, Button, makeStyles, TextField } from "@material-ui/core";
+import { Box, Button, CircularProgress, makeStyles, TextField } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
   iconButton: {
@@ -115,7 +115,11 @@ export default function Tile(props) {
               />
               <img alt="img" width="300" src={postUrl} />
             </div>
-            : <div>Loading...</div>)}
+            : <div style={{
+              "width": "120px",
+              "padding": "50px",
+              "margin": "auto"
+            }}><CircularProgress /></div>)}
           <br />
           {firebase.auth().currentUser.email === props.user ? (
             // <button

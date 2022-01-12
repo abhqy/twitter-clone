@@ -159,10 +159,14 @@ class App extends React.Component {
           }}>
             <Toolbar>
               <Box display='flex' flexGrow={1}>
-
-                <Typography variant="h5" style={{
-                  "padding": "20px"
-                }}>AppName</Typography>
+                <img src={require('./images/logo.png')} style={{
+                  "width": "30px",
+                  "height": "30px",
+                  "position": "relative",
+                  "top": "17px",
+                  "left": "5px"
+                }} alt="logo" />
+                <Typography variant="h5" id="appBarLogo">Heyo!</Typography>
               </Box>
 
               <div style={{ "paddingRight": "20px" }}>

@@ -1,7 +1,18 @@
 import React from "react";
 import firebase from "firebase";
 import "./configs/Fire";
+import { createStyles, MuiThemeProvider, createTheme } from "@material-ui/core/styles";
 import LoginTile from "./components/LoginTile";
+import "./styles/App.css";
+
+
+const theme = createStyles({
+  palette: {
+    type: 'dark',
+  },
+});
+
+const darkTheme = createTheme(theme);
 
 export default class Enter extends React.Component {
   constructor(props) {
@@ -31,14 +42,19 @@ export default class Enter extends React.Component {
 
   render() {
     return (
-      <LoginTile
-        updateEmail={(event) => this.setState({ email: event.target.value })}
-        updatePassword={(event) =>
-          this.setState({ password: event.target.value })
-        }
-        signIn={this.signIn}
-        signUp={this.signUp}
-      />
+      <MuiThemeProvider theme={darkTheme}>
+        <div id="loginWrapper">
+          <LoginTile
+            updateEmail={(event) => this.setState({ email: event.target.value })}
+            updatePassword={(event) =>
+              this.setState({ password: event.target.value })
+            }
+            message={this.state.message}
+            signIn={this.signIn}
+            signUp={this.signUp}
+          />
+        </div>
+      </MuiThemeProvider>
     );
   }
 }

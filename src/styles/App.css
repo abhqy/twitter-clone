@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Galindo");
+
 #tile {
   background-color: #40444b;
   color: whitesmoke;
@@ -8,6 +10,11 @@
   padding: 20px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.342);
   border-radius: 30px;
+}
+
+#appBarLogo {
+  padding: 20px 10px;
+  font-family: "Galindo";
 }
 
 #delete {
@@ -29,4 +36,19 @@
 
 #commentTextField fieldset {
   border-radius: 30;
+}
+
+/* Referred to https://stackoverflow.com/questions/982054/how-to-center-an-element-in-the-middle-of-the-browser-window */
+#loadingIndicator {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#loginWrapper {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  background: linear-gradient(45deg, #3f51b5, #3baa60);
 }
