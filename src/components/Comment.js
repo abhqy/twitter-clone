@@ -5,7 +5,7 @@ import Avatar from "@material-ui/core/Avatar"
 import Paper from "@material-ui/core/Paper"
 import Typography from "@material-ui/core/Typography"
 import Grid from "@material-ui/core/Grid"
-import { Card, IconButton } from "@material-ui/core";
+import { IconButton } from "@material-ui/core";
 import { Delete } from "@material-ui/icons";
 
 // Code used from https://stackoverflow.com/questions/3426404/create-a-hexadecimal-colour-based-on-a-string-with-javascript
@@ -15,7 +15,7 @@ var stringToColour = function (str) {
     hash = str.charCodeAt(i) + ((hash << 5) - hash);
   }
   var colour = '#';
-  for (var i = 0; i < 3; i++) {
+  for (i = 0; i < 3; i++) {
     var value = (hash >> (i * 8)) & 0xFF;
     colour += ('00' + value.toString(16)).substr(-2);
   }

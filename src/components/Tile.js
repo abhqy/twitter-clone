@@ -7,8 +7,7 @@ import Typography from "@material-ui/core/Typography"
 import Grid from "@material-ui/core/Grid"
 import IconButton from "@material-ui/core/IconButton"
 import { Delete, InsertComment, Send } from "@material-ui/icons/"
-import { red } from "@material-ui/core/colors";
-import { Box, Button, CircularProgress, makeStyles, TextField } from "@material-ui/core";
+import { CircularProgress, makeStyles, TextField } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
   iconButton: {
@@ -62,7 +61,7 @@ export default function Tile(props) {
       hash = str.charCodeAt(i) + ((hash << 5) - hash);
     }
     var colour = '#';
-    for (var i = 0; i < 3; i++) {
+    for (i = 0; i < 3; i++) {
       var value = (hash >> (i * 8)) & 0xFF;
       colour += ('00' + value.toString(16)).substr(-2);
     }

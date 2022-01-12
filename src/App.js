@@ -4,7 +4,7 @@ import firebase from "firebase";
 import "./configs/Fire";
 import Tile from "./components/Tile";
 import AppBar from "@material-ui/core/AppBar"
-import { Dialog, DialogActions, DialogContent, DialogTitle, Grid, IconButton, TextField, Typography, Toolbar, Button, Box, Avatar } from "@material-ui/core";
+import { Dialog, DialogActions, DialogContent, DialogTitle, IconButton, TextField, Typography, Toolbar, Button, Box, Avatar } from "@material-ui/core";
 import { createStyles, MuiThemeProvider, createTheme } from "@material-ui/core/styles";
 import { Send, Image, Close, ExitToApp } from "@material-ui/icons";
 
@@ -141,7 +141,7 @@ class App extends React.Component {
       hash = str.charCodeAt(i) + ((hash << 5) - hash);
     }
     var colour = '#';
-    for (var i = 0; i < 3; i++) {
+    for (i = 0; i < 3; i++) {
       var value = (hash >> (i * 8)) & 0xFF;
       colour += ('00' + value.toString(16)).substr(-2);
     }
