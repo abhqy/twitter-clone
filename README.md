@@ -9,7 +9,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Deployed web app: 
 - Backend mechanism: https://xp-lab.web.app/
-- Frontend mechanism: https://scriptum-b1012.web.app/
 
 ## Available Scripts
 
