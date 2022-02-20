@@ -1,7 +1,9 @@
-## 📱 twitter-clone
-- Full stack twitter-clone application that allows users to communicate with each other through messages that can be seen by all users.
-- User authentication information and posts are saved in a cloud-based database using Firebase.
-- Front end website built using HTML5, CSS3, React.js, and Material UI.
+### 👋 Heyo!
+  - A full-stack web application that allows users to post their thoughts
+  - Used Firebase authentication for login and account registration
+  - Stored posts and comments as JSON data in the Firebase realtime database
+  - Enabled users to post pictures, stored as Blobs in Cloud Firestore
+  - Built front-end using Material UI
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
