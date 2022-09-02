@@ -1,6 +1,5 @@
-import { Button, TextField, Grid, Box, Typography, IconButton, Snackbar } from "@material-ui/core";
-import React, { useEffect, useState } from "react";
-import { Close } from "@material-ui/icons";
+import { Button, TextField, Grid, Box, Typography, Snackbar } from "@material-ui/core";
+import React, { useState } from "react";
 
 import "../styles/App.css"
 export default function LoginTile({ message, updateEmail, updatePassword, signIn, signUp }) {
