@@ -43,7 +43,10 @@ export default class Enter extends React.Component {
   render() {
     return (
       <MuiThemeProvider theme={darkTheme}>
-        <div id="loginWrapper">
+        <div id="loginWrapper" style={{
+          display: "grid",
+          placeItems: "center"
+        }}>
           <LoginTile
             updateEmail={(event) => this.setState({ email: event.target.value })}
             updatePassword={(event) =>

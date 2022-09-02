@@ -1,14 +1,15 @@
 import { Button, TextField, Grid, Box, Typography } from "@material-ui/core";
 import React from "react";
+import "../styles/App.css"
 
 export default function LoginTile(props) {
   return (
-    <div style={{
+    <div className="loginCard" style={{
       "display": "inline-block",
-      "backgroundColor": "#202225",
-      "height": "100%",
+      backgroundColor: "#202225",
+      "height": "400px",
       "padding": "0px 10px",
-      "width": "300px",
+      "width": "40%",
       "verticalAlign": "middle"
     }}>
       <div style={{
@@ -58,10 +59,10 @@ export default function LoginTile(props) {
           <br />
           <br />
           <Grid container spacing={2}>
-            <Grid item xs={6}>
+            <Grid item xs={12} sm={6}>
               <Button variant="contained" color="primary" onClick={props.signIn}>Sign In</Button>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} sm={6}>
               <Button variant="outlined" color="primary" onClick={props.signUp}>Sign Up</Button>
             </Grid>
           </Grid>
