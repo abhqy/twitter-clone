@@ -1,8 +1,13 @@
-import { Button, TextField, Grid, Box, Typography } from "@material-ui/core";
-import React from "react";
-import "../styles/App.css"
+import { Button, TextField, Grid, Box, Typography, IconButton, Snackbar } from "@material-ui/core";
+import React, { useEffect, useState } from "react";
+import { Close } from "@material-ui/icons";
 
-export default function LoginTile(props) {
+import "../styles/App.css"
+export default function LoginTile({ message, updateEmail, updatePassword, signIn, signUp }) {
+
+  const [showMessage, setShowMessage] = useState(false);
+
+
   return (
     <div className="loginCard" style={{
       "display": "inline-block",
@@ -17,7 +22,7 @@ export default function LoginTile(props) {
         "height": "100%",
         "display": "flex",
         "alignItems": "center",
-        "justifyContent": "center"
+        "justifyContent": "center",
       }}>
         <div style={{
           // "backgroundColor": "blue"
@@ -39,7 +44,7 @@ export default function LoginTile(props) {
           </Box>
           <TextField placeholder="Email"
             variant="outlined"
-            onChange={props.updateEmail}></TextField>
+            onChange={updateEmail}></TextField>
           {/* <input
             type="text"
             placeholder="Email"
@@ -50,7 +55,7 @@ export default function LoginTile(props) {
           <TextField placeholder="Password"
             variant="outlined"
             type="password"
-            onChange={props.updatePassword}></TextField>
+            onChange={updatePassword}></TextField>
           {/* <input
             type="text"
             placeholder="Password"
@@ -60,15 +65,25 @@ export default function LoginTile(props) {
           <br />
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
-              <Button variant="contained" color="primary" onClick={props.signIn}>Sign In</Button>
+              <Button variant="contained" color="primary" onClick={() => {
+                setShowMessage(true);
+                signIn()
+              }}>Sign In</Button>
             </Grid>
             <Grid item xs={12} sm={6}>
-              <Button variant="outlined" color="primary" onClick={props.signUp}>Sign Up</Button>
+              <Button variant="outlined" color="primary" onClick={() => {
+                setShowMessage(true);
+                signUp();
+              }}>Sign Up</Button>
             </Grid>
           </Grid>
           <br />
-          <Typography style={{ "color": "red" }}>{props.message}</Typography>
-
+          <Snackbar
+            open={showMessage}
+            autoHideDuration={3000}
+            onClose={() => setShowMessage(false)}
+            message={message}
+          />
           {/* <button onClick={props.signIn}>Sign In!</button>
           <button onClick={props.signUp}>Sign Up!</button> */}
         </div>
