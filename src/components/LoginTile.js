@@ -65,13 +65,13 @@ export default function LoginTile({ message, updateEmail, updatePassword, signIn
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <Button variant="contained" color="primary" onClick={() => {
-                setShowMessage(true);
+                if (message) setShowMessage(true);
                 signIn()
               }}>Sign In</Button>
             </Grid>
             <Grid item xs={12} sm={6}>
               <Button variant="outlined" color="primary" onClick={() => {
-                setShowMessage(true);
+                if (message) setShowMessage(true);
                 signUp();
               }}>Sign Up</Button>
             </Grid>
